@@ -68,12 +68,6 @@ class _TodoAddPageState extends State<TodoAddPage> {
                 onPressed: () {
                   print(_controller.text);
                   context.read<Memo>().addItem(context, _controller.text);
-                  // context.go('/', extra: {
-                  //   'name': _controller.text,
-
-                  // _controller.clear();
-                  // context.go('/');
-                  //pop:前のページに遷移するメソッド
                 },
                 child: const Text('追加', style: TextStyle(color: Colors.white)),
               ),

@@ -20,7 +20,7 @@ class Memo extends ChangeNotifier {
     context.pop();
   }
 
-  void handleOkButtonTap(BuildContext context, String targetId) {
+  void _handleOkButtonTap(BuildContext context, String targetId) {
     print('メモタイトル削除');
     //削除ボタンではいが押されたときの処理
     _list.removeWhere((item) => item.id == targetId);
@@ -44,7 +44,7 @@ class Memo extends ChangeNotifier {
             ),
             TextButton(
               onPressed: () {
-                handleOkButtonTap(context, id); // OKボタンの処理を実行
+                _handleOkButtonTap(context, id); // OKボタンの処理を実行
                 //ダイアログを閉じる
               },
               child: const Text('はい'),

@@ -11,9 +11,10 @@ class Counter with ChangeNotifier, DiagnosticableTreeMixin {
   }
 
   /// Makes `Counter` readable inside the devtools by listing all of its properties
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(IntProperty('count', count));
-  }
+  // （すべてのプロパティをリストすることで、devtools 内で「Counter」を読み取り可能にします。）
+  // @override
+  // void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  //   super.debugFillProperties(properties);
+  //   properties.add(IntProperty('count', count));
+  // }
 }
