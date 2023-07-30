@@ -18,6 +18,7 @@ class _Screen3State extends State<Screen3> {
       appBar: AppBar(),
       body: Text(
         /// Calls `context.watch` to make [Count] rebuild when [Counter] changes.
+        //（StatefulWidget内でcontext.watchを呼び出して、Counterの変化に応じてCountが再構築される）
         '${context.watch<Counter>().count}',
         key: const Key('counterState'),
         style: Theme.of(context).textTheme.headlineMedium,
@@ -26,7 +27,9 @@ class _Screen3State extends State<Screen3> {
         key: const Key('increment_floatingActionButton'),
 
         /// Calls `context.read` instead of `context.watch` so that it does not rebuild
+        //（Counterの変更によってCountを再構築しないようにするために、context.watchの代わりにcontext.readを呼び出す）
         /// when [Counter] changes.
+        //（カウンターの値が変更されるときに、context.readなのでウィジェットが変更通知を受け取らず再構築されない）
         onPressed: () => context.read<Counter>().increment(),
         tooltip: 'Increment',
         child: const Icon(Icons.add),
